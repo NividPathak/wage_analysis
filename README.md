@@ -3,6 +3,7 @@
 - **Question:** did state minimum wage increases from 2011 to 2022 raise low-end wages, and did they reduce food-service employment?
 - **Methods:** state x year OEWS panel (2005-2022) joined to Vaghul and Zipperer minimum wages; continuous two-way fixed effects, TWFE and Callaway-Sant'Anna event studies with pre-trend tests, a synthetic control case study with placebo inference, and a simulation power analysis.
 - **Results:** [RESULTS.md](RESULTS.md) (every number generated from `results/*.json`); design in [docs/METHODS.md](docs/METHODS.md), judgment calls in [docs/DECISIONS.md](docs/DECISIONS.md); interactive page `pages/2_Causal_Analysis.py`.
+- **Live page:** https://nividpathak.github.io/wage_analysis/ (static results page, rebuilt from `results/` on every push)
 - **Reproduce:** `make all`. This extension is solo work by Nivid Pathak on top of the Group 7 team project; see [CREDITS.md](CREDITS.md).
 
 ---
