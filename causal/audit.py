@@ -62,8 +62,8 @@ def audit_cleaned() -> list[str]:
         df = pd.read_csv(p, dtype=str, low_memory=False)
         has_all = "OCC_CODE" in df.columns and (df["OCC_CODE"] == "00-0000").any()
         lines.append(f"| `{p.name}` | {len(df)} | {', '.join(df.columns)} | {has_all} |")
-    lines += ["", "The cleaned CSVs drop the All Occupations rows and convert suppression markers "
-              "to missing values, so the causal panel is built from the raw workbooks instead "
+    lines += ["", "The cleaned CSVs drop the All Occupations (`00-0000`) rows, "
+              "so the causal panel is built from the raw workbooks instead "
               "(see DECISIONS.md)."]
     return lines
 

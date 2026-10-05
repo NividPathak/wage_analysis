@@ -19,3 +19,9 @@ conservative, more standard option.
 - The causal panel is built from the raw BLS workbooks in `data/`, not `cleaned_data/`: the cleaned CSVs drop the `00-0000` All Occupations rows that the wage-bite outcome needs.
 - States are keyed on the `AREA` FIPS code in every year, because the 2019 file has no postal-code column.
 - All 2005-2024 state workbooks are present with hourly percentiles, so the BLS download fallback (`causal/download_oews.py`) was written but not needed.
+
+## Phase 2: minimum wage panel
+
+- Source file: `mw_state_annual.xlsx` from the `mw_state_excel.zip` asset of Vaghul & Zipperer v1.4.0.
+- Columns used: `Annual State Average` and `Annual Federal Average` (the annual average, as the plan prefers), keyed on `State FIPS Code` and `State Abbreviation`.
+- `effective_mw = max(state_mw, federal_mw)`; no missing values in the 2005-2022 window for the 50 states plus DC.
