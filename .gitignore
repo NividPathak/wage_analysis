@@ -205,3 +205,11 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Causal extension
+.venv/
+data_external/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+*.pyc

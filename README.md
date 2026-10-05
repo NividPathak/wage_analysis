@@ -1,3 +1,5 @@
+> **Extension in progress:** this copy of the Group 7 team project is being extended with a causal study of state minimum wage increases. See [CREDITS.md](CREDITS.md) for team and data credits.
+
 # Labor Market Structure & Wage Prediction
 
 Exploring the drivers of economic compensation in the United States using occupational employment and wage data from the Bureau of Labor Statistics (BLS).
