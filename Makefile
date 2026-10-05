@@ -30,6 +30,7 @@ analysis: setup
 
 report: setup
 	$(PY) -m causal.report
+	$(PY) -m causal.learning_notes
 
 test: setup
 	$(PY) -m pytest -q
