@@ -25,3 +25,9 @@ conservative, more standard option.
 - Source file: `mw_state_annual.xlsx` from the `mw_state_excel.zip` asset of Vaghul & Zipperer v1.4.0.
 - Columns used: `Annual State Average` and `Annual Federal Average` (the annual average, as the plan prefers), keyed on `State FIPS Code` and `State Abbreviation`.
 - `effective_mw = max(state_mw, federal_mw)`; no missing values in the 2005-2022 window for the 50 states plus DC.
+
+## Phase 4: treatment definition
+
+- Dropped from the event study (above federal by 2010, no large jump in 2011+): MI, MT, OH, OR, VT. They remain in the continuous TWFE regressions, which do not need a discrete treatment date.
+- The large-jump rule is applied to annual-average minimum wages, so a mid-year increase is split over two calendar years; a jump that is large in total but split evenly can fall below the threshold. Kept as written in the plan.
+- Some treated states had small indexed increases before their first large jump (for example FL and AZ before g). Their pre-period is not perfectly clean; this biases event-study estimates toward zero. Kept as written in the plan and listed as a limitation.

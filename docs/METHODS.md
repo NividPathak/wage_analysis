@@ -16,3 +16,17 @@ clean annual time series. For this study that has two consequences:
 
 The analysis handles this by (a) reading event-study effects over several post-treatment years
 rather than one, and (b) running a robustness check with the treatment lagged 1 and 2 years.
+
+## Treatment definition (event study)
+
+Implemented in `causal/treatment.py`; the saved table is `results/treatment_assignment.csv`.
+
+- **Never-treated states:** the effective minimum wage equals the federal minimum ($7.25) in every
+  year from 2010 to 2022.
+- **Treated states:** states with a first "large" increase in 2011 or later, where large means the
+  effective minimum (annual average) rises by at least $0.75 and at least 8% over the prior year.
+  The treatment year g is the first such year.
+- **Dropped states:** states already above the federal minimum in 2010 with no discrete large jump
+  afterwards. They have no clean pre-period and are excluded from the event study and synthetic
+  control (they stay in the continuous two-way fixed effects regressions, which use the full
+  minimum wage variation).
