@@ -1,0 +1,62 @@
+"""State identifiers and the standard nine Census divisions (50 states plus DC)."""
+
+from __future__ import annotations
+
+# FIPS code -> (postal code, Census division)
+STATES: dict[int, tuple[str, str]] = {
+    1: ("AL", "East South Central"),
+    2: ("AK", "Pacific"),
+    4: ("AZ", "Mountain"),
+    5: ("AR", "West South Central"),
+    6: ("CA", "Pacific"),
+    8: ("CO", "Mountain"),
+    9: ("CT", "New England"),
+    10: ("DE", "South Atlantic"),
+    11: ("DC", "South Atlantic"),
+    12: ("FL", "South Atlantic"),
+    13: ("GA", "South Atlantic"),
+    15: ("HI", "Pacific"),
+    16: ("ID", "Mountain"),
+    17: ("IL", "East North Central"),
+    18: ("IN", "East North Central"),
+    19: ("IA", "West North Central"),
+    20: ("KS", "West North Central"),
+    21: ("KY", "East South Central"),
+    22: ("LA", "West South Central"),
+    23: ("ME", "New England"),
+    24: ("MD", "South Atlantic"),
+    25: ("MA", "New England"),
+    26: ("MI", "East North Central"),
+    27: ("MN", "West North Central"),
+    28: ("MS", "East South Central"),
+    29: ("MO", "West North Central"),
+    30: ("MT", "Mountain"),
+    31: ("NE", "West North Central"),
+    32: ("NV", "Mountain"),
+    33: ("NH", "New England"),
+    34: ("NJ", "Middle Atlantic"),
+    35: ("NM", "Mountain"),
+    36: ("NY", "Middle Atlantic"),
+    37: ("NC", "South Atlantic"),
+    38: ("ND", "West North Central"),
+    39: ("OH", "East North Central"),
+    40: ("OK", "West South Central"),
+    41: ("OR", "Pacific"),
+    42: ("PA", "Middle Atlantic"),
+    44: ("RI", "New England"),
+    45: ("SC", "South Atlantic"),
+    46: ("SD", "West North Central"),
+    47: ("TN", "East South Central"),
+    48: ("TX", "West South Central"),
+    49: ("UT", "Mountain"),
+    50: ("VT", "New England"),
+    51: ("VA", "South Atlantic"),
+    53: ("WA", "Pacific"),
+    54: ("WV", "South Atlantic"),
+    55: ("WI", "East North Central"),
+    56: ("WY", "Mountain"),
+}
+
+FIPS_TO_POSTAL: dict[int, str] = {f: v[0] for f, v in STATES.items()}
+POSTAL_TO_FIPS: dict[str, int] = {v[0]: f for f, v in STATES.items()}
+POSTAL_TO_DIVISION: dict[str, str] = {v[0]: v[1] for v in STATES.values()}
