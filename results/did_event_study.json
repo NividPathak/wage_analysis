@@ -91,7 +91,7 @@
         ],
         "n": 828,
         "pretrend": {
-          "test": "joint F (Wald) test that leads -5..-2 are zero, cluster-robust by state",
+          "test": "Wald chi-square test that leads -5..-2 are zero, cluster-robust covariance by state",
           "statistic": 12.351212964540085,
           "p_value": 0.014921991761295819,
           "df": 4
@@ -404,7 +404,7 @@
         ],
         "n": 828,
         "pretrend": {
-          "test": "joint F (Wald) test that leads -5..-2 are zero, cluster-robust by state",
+          "test": "Wald chi-square test that leads -5..-2 are zero, cluster-robust covariance by state",
           "statistic": 4.428990459079623,
           "p_value": 0.35105060610005123,
           "df": 4
@@ -717,7 +717,7 @@
         ],
         "n": 828,
         "pretrend": {
-          "test": "joint F (Wald) test that leads -5..-2 are zero, cluster-robust by state",
+          "test": "Wald chi-square test that leads -5..-2 are zero, cluster-robust covariance by state",
           "statistic": 17.45258335005981,
           "p_value": 0.0015782179088628307,
           "df": 4
@@ -1030,7 +1030,7 @@
         ],
         "n": 828,
         "pretrend": {
-          "test": "joint F (Wald) test that leads -5..-2 are zero, cluster-robust by state",
+          "test": "Wald chi-square test that leads -5..-2 are zero, cluster-robust covariance by state",
           "statistic": 1.3371250788295335,
           "p_value": 0.8550459759161709,
           "df": 4

@@ -89,7 +89,7 @@ Grey: TWFE event study (endpoints binned). Blue: Callaway and Sant'Anna. Event t
 
 Joint test that the event-study leads -5 to -2 are zero.
 
-| outcome | TWFE F statistic | TWFE p-value | CS Wald chi-square | CS p-value |
+| outcome | TWFE Wald chi-square | TWFE p-value | CS Wald chi-square | CS p-value |
 |---|---|---|---|---|
 | log_p10_all | 12.351 | 0.015 | 11.530 | 0.021 |
 | log_median_food | 17.453 | 0.002 | 18.705 | <0.001 |

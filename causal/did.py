@@ -111,10 +111,10 @@ def twfe_event_study(df: pd.DataFrame, y: str) -> dict:
     R = np.zeros((len(LEADS), len(names)))
     for i, e in enumerate(LEADS):
         R[i, names.index(ev_name(e))] = 1.0
-    wald = fit.wald_test(R=R, distribution="F")
+    wald = fit.wald_test(R=R, distribution="chi2")
     return {"coefficients": sorted(coefs, key=lambda c: c["e"]), "n": int(fit._N),
-            "pretrend": {"test": "joint F (Wald) test that leads -5..-2 are zero, "
-                                 "cluster-robust by state",
+            "pretrend": {"test": "Wald chi-square test that leads -5..-2 are zero, "
+                                 "cluster-robust covariance by state",
                          "statistic": float(wald["statistic"]), "p_value": float(wald["pvalue"]),
                          "df": len(LEADS)}}
 

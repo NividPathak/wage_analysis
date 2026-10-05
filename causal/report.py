@@ -232,7 +232,7 @@ def main() -> None:
         L += [f"### {LABELS[y]} (`{y}`)", "", f"![{y}](results/figures/{o[y]['figure']})", ""]
     L += ["## Pre-trend tests", "",
           "Joint test that the event-study leads -5 to -2 are zero.", "",
-          "| outcome | TWFE F statistic | TWFE p-value | CS Wald chi-square | CS p-value |",
+          "| outcome | TWFE Wald chi-square | TWFE p-value | CS Wald chi-square | CS p-value |",
           "|---|---|---|---|---|"]
     for y in LABELS:
         tw, cs = o[y]["twfe_event_study"]["pretrend"], o[y]["callaway_santanna"]["pretrend"]

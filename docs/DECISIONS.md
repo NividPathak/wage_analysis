@@ -38,7 +38,7 @@ conservative, more standard option.
 - `causal/cs_did.py` was also written (plan's fallback design: 2x2 DiDs, cohort-size weights, 999 state-resampling bootstrap draws, seed 42). It supplies the CS pre-trend Wald test, because `differences` does not expose the joint covariance of the leads. Point estimates agree with `differences` to about 1e-16 (`cs_crosscheck_max_abs_diff` in `results/did_event_study.json`).
 - CS 95% CIs are computed as ATT +/- 1.96 SE from the package's bootstrap SE (its own `lower`/`upper` columns mix pointwise and simultaneous bands across aggregations).
 - TWFE event study built with explicit relative-time dummies (endpoints binned at -5 and +5, -1 omitted; never-treated states have all dummies zero) rather than `i()`, which needs a placeholder value for never-treated units.
-- TWFE pre-trend test uses an F test (pyfixest `wald_test`, cluster-robust); the CS pre-trend test uses a chi-square Wald test with the bootstrap covariance.
+- Both pre-trend tests are Wald chi-square tests with 4 degrees of freedom: cluster-robust covariance for TWFE (pyfixest `wald_test(distribution="chi2")`; pyfixest switches to chi-square anyway when R is not an identity matrix, so this is now explicit) and bootstrap covariance for CS.
 - The event study also includes the placebo outcome `log_median_cs` so Phase 7 can report it under both 5a and 5b.
 - Lagged-treatment regressions lose the first 1 or 2 years of the panel (N = 867 and 816) rather than extending the minimum wage series before 2005.
 - Added (not in the plan): a pre-COVID robustness check, CS on years <= 2019 with cohorts g <= 2019. Reason: for the early cohorts, event times +4 and +5 fall in 2019-2022, where pandemic food-service job losses differed across states.

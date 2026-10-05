@@ -90,8 +90,9 @@ CS pre-trend test.
 
 ### 4. Pre-trend tests
 
-Joint test that the leads at event times -5, -4, -3 and -2 are all zero: a cluster-robust F test for
-the TWFE event study and a Wald chi-square test with the bootstrap covariance for CS.
+Joint Wald chi-square test (4 degrees of freedom) that the leads at event times -5, -4, -3 and -2
+are all zero, using the cluster-robust covariance for the TWFE event study and the bootstrap
+covariance for CS.
 
 ### 5. Robustness: pre-COVID sample
 
