@@ -1,0 +1,128 @@
+{
+  "design": {
+    "n_never_treated": 20,
+    "n_real_treated": 26,
+    "treated_share": 0.5652173913043478,
+    "n_fake_treated_per_draw": 11,
+    "n_sims": 500,
+    "seed": 42,
+    "estimator": "binary static TWFE, state + year FE, CRV1 by state",
+    "cohort_years_sampled_from": [
+      2014,
+      2014,
+      2015,
+      2015,
+      2015,
+      2015,
+      2015,
+      2015,
+      2015,
+      2015,
+      2015,
+      2016,
+      2016,
+      2017,
+      2017,
+      2017,
+      2017,
+      2019,
+      2019,
+      2020,
+      2020,
+      2020,
+      2021,
+      2021,
+      2022,
+      2022
+    ]
+  },
+  "outcomes": {
+    "log_emp_food": {
+      "power_by_delta": {
+        "0.00": 0.068,
+        "0.01": 0.064,
+        "0.02": 0.082,
+        "0.03": 0.14,
+        "0.05": 0.308,
+        "0.08": 0.684
+      },
+      "false_positive_rate": 0.068,
+      "mde_80": 0.088,
+      "placebo_estimate_sd": 0.029364867221641236,
+      "mean_se": 0.029256239466354948
+    },
+    "log_p10_all": {
+      "power_by_delta": {
+        "0.00": 0.036,
+        "0.01": 0.09,
+        "0.02": 0.25,
+        "0.03": 0.496,
+        "0.05": 0.898,
+        "0.08": 1.0
+      },
+      "false_positive_rate": 0.036,
+      "mde_80": 0.046,
+      "placebo_estimate_sd": 0.015374343364857311,
+      "mean_se": 0.014840110880276067
+    }
+  },
+  "placebo_outcome": {
+    "outcome": "log_median_cs",
+    "estimates": [
+      {
+        "method": "continuous TWFE (baseline)",
+        "estimate": 0.05142314310818716,
+        "ci_low": 0.0022797022324888977,
+        "ci_high": 0.10056658398388542,
+        "p_value": 0.040636145678009106
+      },
+      {
+        "method": "continuous TWFE (division_x_year_fe)",
+        "estimate": 0.027314509609254304,
+        "ci_low": -0.02862432299494472,
+        "ci_high": 0.08325334221345333,
+        "p_value": 0.3314309650070224
+      },
+      {
+        "method": "continuous TWFE (lag1)",
+        "estimate": 0.0563132942744326,
+        "ci_low": 0.008431120989556763,
+        "ci_high": 0.10419546755930845,
+        "p_value": 0.02209918182482462
+      },
+      {
+        "method": "continuous TWFE (lag2)",
+        "estimate": 0.052047412914121245,
+        "ci_low": 0.004896580532787735,
+        "ci_high": 0.09919824529545476,
+        "p_value": 0.031188376817280483
+      },
+      {
+        "method": "Callaway-Sant'Anna overall ATT",
+        "estimate": 0.003611994879328932,
+        "ci_low": -0.009421131752182881,
+        "ci_high": 0.016645121510840744,
+        "p_value": 0.5870034376097348
+      },
+      {
+        "method": "binary static TWFE",
+        "estimate": 0.007308907813017098,
+        "ci_low": -0.009662695376766728,
+        "ci_high": 0.024280511002800924,
+        "p_value": 0.39033362925776993
+      },
+      {
+        "method": "Callaway-Sant'Anna overall ATT, pre-COVID",
+        "estimate": -0.0017248622613708015,
+        "ci_low": -0.011859547368793622,
+        "ci_high": 0.008409822846052021,
+        "p_value": 0.738701006227743
+      }
+    ],
+    "n_significant_at_5pct": 3,
+    "n_estimates": 7,
+    "event_study_pretrend_p_twfe": 0.8550459759161704,
+    "event_study_pretrend_p_cs": 0.7618063057151667
+  },
+  "figure": "power_curves.png"
+}

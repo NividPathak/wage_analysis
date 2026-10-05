@@ -50,3 +50,9 @@ conservative, more standard option.
 - `pysyncon` installed, so the scipy SLSQP fallback was not needed. V is optimized with Nelder-Mead from equal starting weights (package default).
 - Outcome predictors: means of `log_p10_all` over three equal pre-period sub-windows, plus the pre-period mean of `log_emp_all`. Sub-windows rather than one overall mean so the fit tracks the pre-period path, a standard choice.
 - Placebo-in-space: each never-treated donor is refit as the fake treated unit using the other 19 donors and the same treatment year. With 21 units, the smallest possible permutation p-value is 1/21.
+
+## Phase 7: power and falsification
+
+- There are fewer never-treated states (20) than real treated states (26), so the plan's "same number of states" is impossible. Each draw instead gives fake treatment to the same share of states as the real design (26 / 46, rounded to 11 of 20), with treatment years drawn with replacement from the real cohort-year distribution. The placebo panel is smaller than the real one, so the reported MDE is conservative (too large rather than too small).
+- Each draw is fit once. Adding delta * post to y shifts the estimate by exactly delta and leaves the clustered SE unchanged (checked numerically), so power for every delta comes from the same 500 fits. p-values use t with G - 1 degrees of freedom, matching pyfixest's CRV1 inference.
+- MDE is read off a 0.001-step grid from 0 to 0.2 in addition to the plan's six deltas.
