@@ -14,7 +14,8 @@ def parse_headline_table(text: str) -> list[dict]:
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
         if len(cells) != 6 or cells[0] in ("outcome", "---"):
             continue
-        rows.append(dict(zip(["outcome", "method", "estimate", "ci", "p", "n"], cells)))
+        keys = ["outcome", "method", "estimate", "ci", "p", "n"]
+        rows.append(dict(zip(keys, cells, strict=True)))
     return rows
 
 
@@ -37,7 +38,7 @@ def test_headline_table_matches_json(data) -> None:
     parsed = parse_headline_table(text)
     expected = headline_rows(twfe, es, synth)
     assert len(parsed) == len(expected) > 0
-    for got, exp in zip(parsed, expected):
+    for got, exp in zip(parsed, expected, strict=True):
         assert got["outcome"] == exp["outcome"] and got["method"] == exp["method"]
         assert close(got["estimate"], exp["estimate"])
         assert p_matches(got["p"], exp["p_value"])

@@ -56,3 +56,11 @@ conservative, more standard option.
 - There are fewer never-treated states (20) than real treated states (26), so the plan's "same number of states" is impossible. Each draw instead gives fake treatment to the same share of states as the real design (26 / 46, rounded to 11 of 20), with treatment years drawn with replacement from the real cohort-year distribution. The placebo panel is smaller than the real one, so the reported MDE is conservative (too large rather than too small).
 - Each draw is fit once. Adding delta * post to y shifts the estimate by exactly delta and leaves the clustered SE unchanged (checked numerically), so power for every delta comes from the same 500 fits. p-values use t with G - 1 degrees of freedom, matching pyfixest's CRV1 inference.
 - MDE is read off a 0.001-step grid from 0 to 0.2 in addition to the plan's six deltas.
+
+## Phase 9: app, CI, polish
+
+- `app.py` uses a sidebar radio, not `st.navigation`, so a `pages/` folder adds the new page through Streamlit's classic multipage mode without touching `app.py`.
+- The page reads only `results/` and imports the same `causal.report` helpers that write RESULTS.md, so the app and the report cannot show different numbers.
+- CI runs on Python 3.11 with `requirements-causal.txt`. Tests need only committed files: the minimum wage CSV, the panel parquet, `results/*.json`, RESULTS.md, and a 15-state fixture panel in `tests/fixtures/` that runs the estimators end to end.
+- `.gitattributes` exemptions for the new output folders use `!filter !diff !merge` so JSON and CSV outputs are stored as plain git files (not LFS) and stay diffable; `*.png` and `*.parquet` are marked binary.
+- `make all` creates `.venv` with `python3.11` (override with `make all PYTHON=python3.12`) if it does not exist.

@@ -46,7 +46,7 @@ def placebo_draws(panel: pd.DataFrame, never: list[str], cohort_years: np.ndarra
     for _ in range(N_SIMS):
         fake = rng.choice(never, size=n_fake, replace=False)
         years = rng.choice(cohort_years, size=n_fake, replace=True)
-        g = base["state"].map(dict(zip(fake, years)))
+        g = base["state"].map(dict(zip(fake, years, strict=True)))
         df = base.assign(post=((base["year"] >= g) & g.notna()).astype(float))
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")

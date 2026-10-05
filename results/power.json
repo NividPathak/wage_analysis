@@ -72,8 +72,8 @@
       {
         "method": "continuous TWFE (baseline)",
         "estimate": 0.05142314310818716,
-        "ci_low": 0.0022797022324888977,
-        "ci_high": 0.10056658398388542,
+        "ci_low": 0.0022797022324888908,
+        "ci_high": 0.10056658398388543,
         "p_value": 0.040636145678009106
       },
       {
@@ -86,16 +86,16 @@
       {
         "method": "continuous TWFE (lag1)",
         "estimate": 0.0563132942744326,
-        "ci_low": 0.008431120989556763,
+        "ci_low": 0.00843112098955675,
         "ci_high": 0.10419546755930845,
         "p_value": 0.02209918182482462
       },
       {
         "method": "continuous TWFE (lag2)",
-        "estimate": 0.052047412914121245,
-        "ci_low": 0.004896580532787735,
+        "estimate": 0.05204741291412124,
+        "ci_low": 0.004896580532787721,
         "ci_high": 0.09919824529545476,
-        "p_value": 0.031188376817280483
+        "p_value": 0.031188376817280705
       },
       {
         "method": "Callaway-Sant'Anna overall ATT",
@@ -121,7 +121,7 @@
     ],
     "n_significant_at_5pct": 3,
     "n_estimates": 7,
-    "event_study_pretrend_p_twfe": 0.8550459759161704,
+    "event_study_pretrend_p_twfe": 0.8550459759161709,
     "event_study_pretrend_p_cs": 0.7618063057151667
   },
   "figure": "power_curves.png"

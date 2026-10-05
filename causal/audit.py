@@ -2,12 +2,15 @@
 
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 
-from causal.oews_io import (ALIAS_TO_KEY, REPO_ROOT, SUPPRESSION_MARKERS, load_raw_year,
-                            raw_state_files)
+from causal.oews_io import (
+    ALIAS_TO_KEY,
+    REPO_ROOT,
+    SUPPRESSION_MARKERS,
+    load_raw_year,
+    raw_state_files,
+)
 
 KEY_FIELDS = ["ST", "AREA_TYPE", "OCC_CODE", "GROUP", "TOT_EMP", "H_MEAN", "A_MEAN",
               "H_MEDIAN", "A_MEDIAN", "H_PCT10", "A_PCT10"]

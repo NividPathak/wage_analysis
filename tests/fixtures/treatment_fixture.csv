@@ -1,0 +1,16 @@
+state,group,g,jump_usd,jump_pct
+AL,never_treated,,,
+AZ,treated,2017.0,1.95,0.2422
+CA,treated,2016.0,1.0,0.1111
+CO,treated,2017.0,0.99,0.1191
+FL,treated,2022.0,1.3279,0.1488
+GA,never_treated,,,
+MA,treated,2015.0,1.0,0.125
+ND,never_treated,,,
+NJ,treated,2014.0,1.0,0.1379
+NY,treated,2014.0,0.75,0.1034
+OH,dropped,,,
+PA,never_treated,,,
+TX,never_treated,,,
+VA,treated,2021.0,1.5103,0.2083
+WI,never_treated,,,

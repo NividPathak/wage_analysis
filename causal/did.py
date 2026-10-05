@@ -149,7 +149,8 @@ def differences_cs(df: pd.DataFrame, y: str) -> dict | None:
     return {"coefficients": coefs,
             "overall_att": row(s["ATT"], s["std_error"]),
             "note": "differences 0.3.0 ATTgt, never-treated controls, universal base period, "
-                    "multiplier bootstrap (999 draws, seed 42), pointwise 95% CIs = ATT +/- 1.96 SE"}
+                    "multiplier bootstrap (999 draws, seed 42), "
+                    "pointwise 95% CIs = ATT +/- 1.96 SE"}
 
 
 def own_cs(df: pd.DataFrame, y: str) -> dict:

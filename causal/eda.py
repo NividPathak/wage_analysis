@@ -81,7 +81,8 @@ def main() -> None:
     lines += ["", "Note: the gap between the groups narrows from 2005 to 2010, when the federal "
               "minimum rose from $5.15 to $7.25 and bound mostly in the never-treated states. "
               "Pre-2010 years enter the event study only as far leads, so the pre-trend test "
-              "is the main check on this.", "", "## Descriptive statistics", "", desc.round(4).to_markdown()]
+              "is the main check on this.", "", "## Descriptive statistics", "",
+              desc.round(4).to_markdown()]
     EDA_DOC.write_text("\n".join(lines) + "\n")
     print(f"wrote {EDA_DOC}, {f1}, {f2}, {DESC_PATH.name}")
 
