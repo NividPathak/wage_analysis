@@ -43,3 +43,10 @@ conservative, more standard option.
 - Lagged-treatment regressions lose the first 1 or 2 years of the panel (N = 867 and 816) rather than extending the minimum wage series before 2005.
 - Added (not in the plan): a pre-COVID robustness check, CS on years <= 2019 with cohorts g <= 2019. Reason: for the early cohorts, event times +4 and +5 fall in 2019-2022, where pandemic food-service job losses differed across states.
 - Added: a static binary TWFE DiD (`post` dummy), which is the estimator reused in the Phase 7 power simulation.
+
+## Phase 6: synthetic control
+
+- Case selection reads "largest single-year percentage increase" as the jump in the state's treatment year g (the event the study is about). Result: AZ, g = 2017 (see `results/synth.json` for the jump size). Every treated cohort leaves at least 5 pre-years because the panel starts in 2005.
+- `pysyncon` installed, so the scipy SLSQP fallback was not needed. V is optimized with Nelder-Mead from equal starting weights (package default).
+- Outcome predictors: means of `log_p10_all` over three equal pre-period sub-windows, plus the pre-period mean of `log_emp_all`. Sub-windows rather than one overall mean so the fit tracks the pre-period path, a standard choice.
+- Placebo-in-space: each never-treated donor is refit as the fake treated unit using the other 19 donors and the same treatment year. With 21 units, the smallest possible permutation p-value is 1/21.
