@@ -2,6 +2,8 @@
 cleaned_data/combined_data_by_year.csv filter=lfs diff=lfs merge=lfs -text
 *.cpickle filter=lfs diff=lfs merge=lfs -text
 # Causal extension: keep small outputs as plain git files (no LFS)
-data_processed/** -filter -diff -merge text
-results/** -filter -diff -merge text
-tests/fixtures/** -filter -diff -merge text
+data_processed/** -filter -diff -merge
+results/** -filter -diff -merge
+tests/fixtures/** -filter -diff -merge
+*.png binary
+*.parquet binary
